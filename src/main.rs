@@ -194,3 +194,12 @@ fn char_type() {
     let newline: char = '\n';
     println!("Newline character: {newline}");
 }
+
+#[test]
+fn tuple(){
+    // Tuple type
+    let data :(isize, f64, char) = (42, 3.14, 'A');
+    println!("Tuple data: {:?}", data);
+    println!("First element: {}", data.0);
+    println!("Second element: {}", data.1);
+}
