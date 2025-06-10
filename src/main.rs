@@ -144,3 +144,18 @@ fn boolean(){
     let b :bool = false;
     println!("a = {a}, b = {b}");
 }
+
+#[test]
+fn comparison(){
+    // Comparison operators
+    let a = 10;
+    let b = 20;
+    println!("a = {a}, b = {b}");
+
+    println!("a == b: {}", a == b); // Equal
+    println!("a != b: {}", a != b); // Not equal
+    println!("a < b: {}", a < b);   // Less than
+    println!("a > b: {}", a > b);   // Greater than
+    println!("a <= b: {}", a <= b); // Less than or equal to
+    println!("a >= b: {}", a >= b); // Greater than or equal to
+}
