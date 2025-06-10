@@ -205,4 +205,10 @@ fn tuple(){
     
     let c = data.2;
     println!("Third element: {c}");
+    
+    // Destructuring a tuple
+    let (x, y, z) = data;
+    // Use _ to ignore a value
+    // let (x, _, z) = data;
+    println!("Destructured: x = {x}, y = {y}, z = {z}");
 }
