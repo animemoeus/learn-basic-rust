@@ -11,7 +11,17 @@ fn hello_test(){
 
 #[test]
 fn test_variable(){
+    // Immutable variable
     let name = "Arter Tendean";
-    // name = "Tendean Arter";
     println!("Hello {name}")
+}
+
+#[test]
+fn test_mutable(){
+    // Mutable variable
+    let mut name = "Arter Tendean";
+    println!("Hello {name}");
+    
+    name = "Tendean Arter";
+    println!("Hello {name}!")
 }
