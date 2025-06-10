@@ -21,7 +21,16 @@ fn test_mutable(){
     // Mutable variable
     let mut name = "Arter Tendean";
     println!("Hello {name}");
-    
+
     name = "Tendean Arter";
     println!("Hello {name}!")
+}
+
+#[test]
+fn shadowing(){
+    let name = "Arter Tendean";
+    println!("Hello {name}");
+
+    let name = 1337;
+    println!("Hello {name}");
 }
