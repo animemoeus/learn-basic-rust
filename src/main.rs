@@ -179,3 +179,18 @@ fn boolean_operators() {
     let not_a = !a;
     println!("!a: {not_a}");
 }
+
+#[test]
+fn char_type() {
+    // Character type
+    let c: char = 'A';
+    println!("Character: {c}");
+
+    // Unicode characters
+    let heart: char = '♥';
+    println!("Heart character: {heart}");
+
+    // Escape sequences
+    let newline: char = '\n';
+    println!("Newline character: {newline}");
+}
