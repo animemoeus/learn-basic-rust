@@ -211,4 +211,13 @@ fn tuple(){
     // Use _ to ignore a value
     // let (x, _, z) = data;
     println!("Destructured: x = {x}, y = {y}, z = {z}");
+    
+    // Mutable tuple
+    let mut mutable_data = (1, 2.5, 'B');
+    println!("Mutable tuple data: {:?}", mutable_data);
+    
+    mutable_data.0 = 10; // Change first element
+    mutable_data.1 = 3.14; // Change second element
+    mutable_data.2 = 'C'; // Change third element
+    println!("Modified mutable tuple data: {:?}", mutable_data);
 }
