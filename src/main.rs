@@ -166,7 +166,7 @@ fn boolean_operators() {
     let a = true;
     let b = false;
     println!("a = {a}, b = {b}");
-    
+
     // Logical AND
     let and_result = a && b;
     println!("a && b: {and_result}");
@@ -202,4 +202,7 @@ fn tuple(){
     println!("Tuple data: {:?}", data);
     println!("First element: {}", data.0);
     println!("Second element: {}", data.1);
+    
+    let c = data.2;
+    println!("Third element: {c}");
 }
