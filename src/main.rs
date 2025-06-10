@@ -202,22 +202,33 @@ fn tuple(){
     println!("Tuple data: {:?}", data);
     println!("First element: {}", data.0);
     println!("Second element: {}", data.1);
-    
+
     let c = data.2;
     println!("Third element: {c}");
-    
+
     // Destructuring a tuple
     let (x, y, z) = data;
     // Use _ to ignore a value
     // let (x, _, z) = data;
     println!("Destructured: x = {x}, y = {y}, z = {z}");
-    
+
     // Mutable tuple
     let mut mutable_data = (1, 2.5, 'B');
     println!("Mutable tuple data: {:?}", mutable_data);
-    
+
     mutable_data.0 = 10; // Change first element
     mutable_data.1 = 3.14; // Change second element
     mutable_data.2 = 'C'; // Change third element
     println!("Modified mutable tuple data: {:?}", mutable_data);
+}
+
+#[test]
+fn unit(){
+    println!("Hello, unit!");
+}
+#[test]
+fn test_unit(){
+    // Test empty tuple
+    let result = unit();
+    println!("Result of unit function: {:?}", result);
 }
