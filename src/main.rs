@@ -114,3 +114,33 @@ fn numeric_operators() {
     let remainder = a % b;
     println!("Remainder: {remainder}");
 }
+
+#[test]
+fn augmented_assignment() {
+    let mut a = 10;
+    let b = 3;
+
+    // Augmented assignment
+    a += b; // a = a + b
+    println!("a after +=: {a}");
+
+    a -= b; // a = a - b
+    println!("a after -=: {a}");
+
+    a *= b; // a = a * b
+    println!("a after *=: {a}");
+
+    a /= b; // a = a / b
+    println!("a after /=: {a}");
+
+    a %= b; // a = a % b
+    println!("a after %=: {a}");
+}
+
+#[test]
+fn boolean(){
+    // Boolean values
+    let a = true;
+    let b :bool = false;
+    println!("a = {a}, b = {b}");
+}
