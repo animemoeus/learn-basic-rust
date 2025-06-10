@@ -159,3 +159,23 @@ fn comparison(){
     println!("a <= b: {}", a <= b); // Less than or equal to
     println!("a >= b: {}", a >= b); // Greater than or equal to
 }
+
+#[test]
+fn boolean_operators() {
+    // Boolean operators
+    let a = true;
+    let b = false;
+    println!("a = {a}, b = {b}");
+    
+    // Logical AND
+    let and_result = a && b;
+    println!("a && b: {and_result}");
+
+    // Logical OR
+    let or_result = a || b;
+    println!("a || b: {or_result}");
+
+    // Logical NOT
+    let not_a = !a;
+    println!("!a: {not_a}");
+}
