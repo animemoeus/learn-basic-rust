@@ -79,4 +79,11 @@ fn number_conversion(){
     // f += 1; // This will cause an overflow in debug mode
     // println!("f after overflow = {f}");
 
+    
+    // Converting to smaller types
+    let f :i16 = 32767;
+    println!("f = {f}");
+    
+    let g :i8 = f as i8; // This will truncate the value
+    println!("g = {g}"); // g will be -1 due to overflow
 }
