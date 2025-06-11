@@ -236,7 +236,44 @@ fn test_unit(){
 #[test]
 fn array(){
     // Array
-    
+
     let array :[i32; 5] = [1, 2, 3, 4, 5];
     println!("Array data: {:?}", array);
+
+    let first_element = array[0];
+    println!("First element: {}", first_element);
+
+    let second_element = array[1];
+    println!("Second element: {}", second_element);
+
+    
+    // Mutable array
+    let mut mutable_array :[i8; 3] = [1, 2, 3];
+    println!("Mutable array data: {:?}", mutable_array);
+    
+    mutable_array[0] = 10; // Change first element
+    mutable_array[1] = 20; // Change second element
+    println!("Mutable array data: {:?}", mutable_array);
+    
+    // Get length of array
+    let length = array.len();
+    println!("Array length: {length}");
+}
+
+#[test]
+fn two_dimensional_array(){
+    let array :[[u8; 2]; 2] = [[1, 2], [3, 4]];
+    println!("2D Array data: {:?}", array);
+    
+    // Accessing elements
+    let first_row = array[0];
+    let second_row = array[1];
+    println!("First row: {:?}", first_row);
+    println!("Second row: {:?}", second_row);
+    
+    let zero_zero = array[0][0];
+    let zero_one = array[0][1];
+    println!("First zero: {:?}", zero_zero);
+    println!("First one: {:?}", zero_one);
+    
 }
