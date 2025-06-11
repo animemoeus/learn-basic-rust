@@ -288,3 +288,16 @@ fn constant_example() {
     const MAX_SIZE: usize = 100;
     println!("The maximum size is: {}", MAX_SIZE);
 }
+
+#[test]
+fn variable_scope(){
+    let name = "Arter Tendean";
+    
+    println!("The value of name is: {}", name);
+
+    {
+        let name = "Tendean Arter"; // Shadowing in inner scope
+        println!("The value of name in inner scope is: {}", name);
+    }
+    println!("The value of name after inner scope is: {}", name);
+}
