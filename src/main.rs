@@ -246,15 +246,15 @@ fn array(){
     let second_element = array[1];
     println!("Second element: {}", second_element);
 
-    
+
     // Mutable array
     let mut mutable_array :[i8; 3] = [1, 2, 3];
     println!("Mutable array data: {:?}", mutable_array);
-    
+
     mutable_array[0] = 10; // Change first element
     mutable_array[1] = 20; // Change second element
     println!("Mutable array data: {:?}", mutable_array);
-    
+
     // Get length of array
     let length = array.len();
     println!("Array length: {length}");
@@ -264,18 +264,18 @@ fn array(){
 fn two_dimensional_array(){
     let array :[[u8; 2]; 2] = [[1, 2], [3, 4]];
     println!("2D Array data: {:?}", array);
-    
+
     // Accessing elements
     let first_row = array[0];
     let second_row = array[1];
     println!("First row: {:?}", first_row);
     println!("Second row: {:?}", second_row);
-    
+
     let zero_zero = array[0][0];
     let zero_one = array[0][1];
     println!("First zero: {:?}", zero_zero);
     println!("First one: {:?}", zero_one);
-    
+
 }
 
 const PI: f64 = 3.14159;
@@ -292,7 +292,7 @@ fn constant_example() {
 #[test]
 fn variable_scope(){
     let name = "Arter Tendean";
-    
+
     println!("The value of name is: {}", name);
 
     {
@@ -311,7 +311,7 @@ fn stack_heap(){
 fn function_a(){
     let a = 10;
     let b = String::from("Hello");
-    
+
     println!("The value of a is: {}", a);
     println!("The value of b is: {}", b);
 }
@@ -322,4 +322,12 @@ fn function_b(){
 
     println!("The value of a is: {}", a);
     println!("The value of b is: {}", b);
+}
+
+
+#[test]
+fn string(){
+    let name :&str = "  Arter Tendean  ";
+    let trim = name.trim();
+    println!("Name: {trim}");
 }
