@@ -341,3 +341,13 @@ fn string_type(){
     let name2 = name.replace("Arter Tendean", "arter tendean");
     println!("Name2: {name2}");
 }
+
+#[test]
+fn ownership_movement(){
+    let name_1 = String::from("Arter Tendean");
+    println!("Name_1: {name_1}");
+    
+    let name_2 = name_1; // Ownership is moved, name_1 is no longer valid
+    // println!("Name_1 after move: {name_1}"); // This will cause a compile error
+    println!("Name_2: {name_2}");
+}
