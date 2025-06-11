@@ -277,3 +277,14 @@ fn two_dimensional_array(){
     println!("First one: {:?}", zero_one);
     
 }
+
+const PI: f64 = 3.14159;
+#[test]
+fn constant_example() {
+    // Using a constant
+    println!("The value of PI is: {}", PI);
+
+    // Constants must have a type annotation
+    const MAX_SIZE: usize = 100;
+    println!("The maximum size is: {}", MAX_SIZE);
+}
