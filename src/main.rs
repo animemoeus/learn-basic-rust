@@ -331,3 +331,13 @@ fn string(){
     let trim = name.trim();
     println!("Name: {trim}");
 }
+
+#[test]
+fn string_type(){
+    let mut name :String = String::from("Arter");
+    name.push_str(" Tendean");
+    println!("Name: {name}");
+
+    let name2 = name.replace("Arter Tendean", "arter tendean");
+    println!("Name2: {name2}");
+}
