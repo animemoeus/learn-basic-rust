@@ -346,8 +346,18 @@ fn string_type(){
 fn ownership_movement(){
     let name_1 = String::from("Arter Tendean");
     println!("Name_1: {name_1}");
-    
+
     let name_2 = name_1; // Ownership is moved, name_1 is no longer valid
     // println!("Name_1 after move: {name_1}"); // This will cause a compile error
+    println!("Name_2: {name_2}");
+}
+
+#[test]
+fn clone(){
+    let name_1 = String::from("Arter Tendean");
+    println!("Name_1: {name_1}");
+
+    let name_2 = name_1.clone(); // Cloning creates a deep copy
+    println!("Name_1 after clone: {name_1}");
     println!("Name_2: {name_2}");
 }
