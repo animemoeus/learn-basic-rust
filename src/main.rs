@@ -361,3 +361,16 @@ fn clone(){
     println!("Name_1 after clone: {name_1}");
     println!("Name_2: {name_2}");
 }
+
+#[test]
+fn if_expression(){
+    let waifu = "tkg";
+    
+    if waifu.to_lowercase() == "Takagi".to_lowercase() {
+        println!("My waifu is Takagi!");
+    } else if waifu.to_lowercase() == "Shinomiya".to_lowercase() {
+        println!("My waifu is Shinomiya!");
+    } else {
+        println!("I don't know who my waifu is.");
+    }
+}
