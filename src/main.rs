@@ -301,3 +301,25 @@ fn variable_scope(){
     }
     println!("The value of name after inner scope is: {}", name);
 }
+
+#[test]
+fn stack_heap(){
+    function_a();
+    function_b();
+}
+
+fn function_a(){
+    let a = 10;
+    let b = String::from("Hello");
+    
+    println!("The value of a is: {}", a);
+    println!("The value of b is: {}", b);
+}
+
+fn function_b(){
+    let a = 10;
+    let b = String::from("Hello");
+
+    println!("The value of a is: {}", a);
+    println!("The value of b is: {}", b);
+}
