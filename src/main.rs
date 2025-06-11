@@ -232,3 +232,11 @@ fn test_unit(){
     let result = unit();
     println!("Result of unit function: {:?}", result);
 }
+
+#[test]
+fn array(){
+    // Array
+    
+    let array :[i32; 5] = [1, 2, 3, 4, 5];
+    println!("Array data: {:?}", array);
+}
