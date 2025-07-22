@@ -365,7 +365,8 @@ fn clone(){
 #[test]
 fn if_expression(){
     let waifu = "tkg";
-    
+    let sentence :&str;
+
     if waifu.to_lowercase() == "Takagi".to_lowercase() {
         println!("My waifu is Takagi!");
     } else if waifu.to_lowercase() == "Shinomiya".to_lowercase() {
@@ -373,4 +374,14 @@ fn if_expression(){
     } else {
         println!("I don't know who my waifu is.");
     }
+    
+    // Using if as an expression
+    sentence = if waifu.to_lowercase() == "Takagi".to_lowercase() {
+        "My waifu is Takagi!"
+    } else if waifu.to_lowercase() == "Shinomiya".to_lowercase() {
+        "My waifu is Shinomiya!"
+    } else {
+        "I don't know who my waifu is."
+    };
+    println!("Sentence: {sentence}");
 }
