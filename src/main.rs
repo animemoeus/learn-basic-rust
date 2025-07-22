@@ -1,23 +1,23 @@
 fn main() {
     println!("Hello, world!");
-    
+
     println!("Hello arter!")
 }
 
 #[test]
-fn hello_test(){
+fn hello_test() {
     println!("Hello, test!");
 }
 
 #[test]
-fn test_variable(){
+fn test_variable() {
     // Immutable variable
     let name = "Arter Tendean";
     println!("Hello {name}")
 }
 
 #[test]
-fn test_mutable(){
+fn test_mutable() {
     // Mutable variable
     let mut name = "Arter Tendean";
     println!("Hello {name}");
@@ -27,7 +27,7 @@ fn test_mutable(){
 }
 
 #[test]
-fn shadowing(){
+fn shadowing() {
     // Shadowing variable
     let name = "Arter Tendean";
     println!("Hello {name}");
@@ -37,13 +37,13 @@ fn shadowing(){
 }
 
 #[test]
-fn explicit(){
-    let age :u8 = 100;
+fn explicit() {
+    let age: u8 = 100;
     println!("Your age is {age}");
 }
 
 #[test]
-fn number(){
+fn number() {
     // Default type is i32
     let a = 10;
     println!("a = {a}");
@@ -54,23 +54,23 @@ fn number(){
 }
 
 #[test]
-fn number_conversion(){
+fn number_conversion() {
     // Number conversion
     // i8, i16, i32, i64, i128
 
-    let a :i8 = 10;
+    let a: i8 = 10;
     println!("a = {a}");
 
-    let b :i16 = a as i16;
+    let b: i16 = a as i16;
     println!("b = {b}");
 
-    let c :i32 = b as i32;
+    let c: i32 = b as i32;
     println!("c = {c}");
 
-    let d :i64 = c as i64;
+    let d: i64 = c as i64;
     println!("d = {d}");
 
-    let e :i128 = a as i128;
+    let e: i128 = a as i128;
     println!("e = {e}");
 
     // Overflow example
@@ -79,12 +79,11 @@ fn number_conversion(){
     // f += 1; // This will cause an overflow in debug mode
     // println!("f after overflow = {f}");
 
-
     // Converting to smaller types
-    let f :i16 = 32767;
+    let f: i16 = 32767;
     println!("f = {f}");
 
-    let g :i8 = f as i8; // This will truncate the value
+    let g: i8 = f as i8; // This will truncate the value
     println!("g = {g}"); // g will be -1 due to overflow
 }
 
@@ -138,15 +137,15 @@ fn augmented_assignment() {
 }
 
 #[test]
-fn boolean(){
+fn boolean() {
     // Boolean values
     let a = true;
-    let b :bool = false;
+    let b: bool = false;
     println!("a = {a}, b = {b}");
 }
 
 #[test]
-fn comparison(){
+fn comparison() {
     // Comparison operators
     let a = 10;
     let b = 20;
@@ -154,8 +153,8 @@ fn comparison(){
 
     println!("a == b: {}", a == b); // Equal
     println!("a != b: {}", a != b); // Not equal
-    println!("a < b: {}", a < b);   // Less than
-    println!("a > b: {}", a > b);   // Greater than
+    println!("a < b: {}", a < b); // Less than
+    println!("a > b: {}", a > b); // Greater than
     println!("a <= b: {}", a <= b); // Less than or equal to
     println!("a >= b: {}", a >= b); // Greater than or equal to
 }
@@ -196,9 +195,9 @@ fn char_type() {
 }
 
 #[test]
-fn tuple(){
+fn tuple() {
     // Tuple type
-    let data :(isize, f64, char) = (42, 3.14, 'A');
+    let data: (isize, f64, char) = (42, 3.14, 'A');
     println!("Tuple data: {:?}", data);
     println!("First element: {}", data.0);
     println!("Second element: {}", data.1);
@@ -223,21 +222,21 @@ fn tuple(){
 }
 
 #[test]
-fn unit(){
+fn unit() {
     println!("Hello, unit!");
 }
 #[test]
-fn test_unit(){
+fn test_unit() {
     // Test empty tuple
     let result = unit();
     println!("Result of unit function: {:?}", result);
 }
 
 #[test]
-fn array(){
+fn array() {
     // Array
 
-    let array :[i32; 5] = [1, 2, 3, 4, 5];
+    let array: [i32; 5] = [1, 2, 3, 4, 5];
     println!("Array data: {:?}", array);
 
     let first_element = array[0];
@@ -246,9 +245,8 @@ fn array(){
     let second_element = array[1];
     println!("Second element: {}", second_element);
 
-
     // Mutable array
-    let mut mutable_array :[i8; 3] = [1, 2, 3];
+    let mut mutable_array: [i8; 3] = [1, 2, 3];
     println!("Mutable array data: {:?}", mutable_array);
 
     mutable_array[0] = 10; // Change first element
@@ -261,8 +259,8 @@ fn array(){
 }
 
 #[test]
-fn two_dimensional_array(){
-    let array :[[u8; 2]; 2] = [[1, 2], [3, 4]];
+fn two_dimensional_array() {
+    let array: [[u8; 2]; 2] = [[1, 2], [3, 4]];
     println!("2D Array data: {:?}", array);
 
     // Accessing elements
@@ -275,7 +273,6 @@ fn two_dimensional_array(){
     let zero_one = array[0][1];
     println!("First zero: {:?}", zero_zero);
     println!("First one: {:?}", zero_one);
-
 }
 
 const PI: f64 = 3.14159;
@@ -290,7 +287,7 @@ fn constant_example() {
 }
 
 #[test]
-fn variable_scope(){
+fn variable_scope() {
     let name = "Arter Tendean";
 
     println!("The value of name is: {}", name);
@@ -303,12 +300,12 @@ fn variable_scope(){
 }
 
 #[test]
-fn stack_heap(){
+fn stack_heap() {
     function_a();
     function_b();
 }
 
-fn function_a(){
+fn function_a() {
     let a = 10;
     let b = String::from("Hello");
 
@@ -316,25 +313,24 @@ fn function_a(){
     println!("The value of b is: {}", b);
 }
 
-fn function_b(){
+fn function_b() {
     let a = 10;
     let b = String::from("Hello");
 
     println!("The value of a is: {}", a);
     println!("The value of b is: {}", b);
 }
-
 
 #[test]
-fn string(){
-    let name :&str = "  Arter Tendean  ";
+fn string() {
+    let name: &str = "  Arter Tendean  ";
     let trim = name.trim();
     println!("Name: {trim}");
 }
 
 #[test]
-fn string_type(){
-    let mut name :String = String::from("Arter");
+fn string_type() {
+    let mut name: String = String::from("Arter");
     name.push_str(" Tendean");
     println!("Name: {name}");
 
@@ -343,7 +339,7 @@ fn string_type(){
 }
 
 #[test]
-fn ownership_movement(){
+fn ownership_movement() {
     let name_1 = String::from("Arter Tendean");
     println!("Name_1: {name_1}");
 
@@ -353,7 +349,7 @@ fn ownership_movement(){
 }
 
 #[test]
-fn clone(){
+fn clone() {
     let name_1 = String::from("Arter Tendean");
     println!("Name_1: {name_1}");
 
@@ -363,9 +359,9 @@ fn clone(){
 }
 
 #[test]
-fn if_expression(){
+fn if_expression() {
     let waifu = "tkg";
-    let sentence :&str;
+    let sentence: &str;
 
     if waifu.to_lowercase() == "Takagi".to_lowercase() {
         println!("My waifu is Takagi!");
@@ -374,7 +370,7 @@ fn if_expression(){
     } else {
         println!("I don't know who my waifu is.");
     }
-    
+
     // Using if as an expression
     sentence = if waifu.to_lowercase() == "Takagi".to_lowercase() {
         "My waifu is Takagi!"
@@ -384,4 +380,88 @@ fn if_expression(){
         "I don't know who my waifu is."
     };
     println!("Sentence: {sentence}");
+}
+
+#[test]
+fn loop_expresion() {
+    let mut counter: i64 = 0;
+
+    loop {
+        println!("Counter: {counter}");
+
+        if counter == 100 {
+            println!("Counter reached 100, breaking the loop.");
+            break; // Break the loop when counter reaches 100
+        }
+
+        counter += 1; // Increment the counter
+    }
+}
+
+#[test]
+fn loop_return_value() {
+    let mut counter: i64 = 0;
+
+    let result = loop {
+        println!("Counter: {counter}");
+
+        if counter == 100000 {
+            println!("Counter reached 100, breaking the loop.");
+            break "Loop finished"; // Return a value when breaking the loop
+        }
+
+        counter += 1; // Increment the counter
+    };
+
+    println!("Result of loop: {result}");
+}
+
+#[test]
+fn nested_loop() {
+    let mut counter: i64 = 0;
+    loop {
+        let mut counter2: i64 = 0;
+
+        loop {
+            print!("*");
+            if counter2 == counter {
+                println!();
+                break; // Break the inner loop when counter2 reaches 10
+            }
+
+            counter2 += 1; // Increment the inner counter
+        }
+
+        if counter == 10 {
+            println!("Counter reached 10, breaking the outer loop.");
+            break; // Break the outer loop when counter reaches 10
+        }
+
+        counter += 1; // Increment the outer counter
+    }
+}
+
+#[test]
+fn loop_label() {
+    let mut i = 1;
+    'arter: loop {
+        let mut j = 1;
+        loop {
+            println!("{i} x {j} = {}", i * j);
+            j += 1; // Increment inner loop counter
+            if j > 10 {
+                break; // Break the inner loop when j exceeds 10
+            }
+
+            //  break 'arter; // Break the outer loop using label
+            if j == 7 {
+                break 'arter;
+            }
+        }
+        i += 1; // Increment outer loop counter
+        if i > 10 {
+            println!("Outer loop finished.");
+            break; // Break the outer loop when i exceeds 10
+        }
+    }
 }
