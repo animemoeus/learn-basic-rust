@@ -465,3 +465,13 @@ fn loop_label() {
         }
     }
 }
+
+#[test]
+fn while_loop(){
+    let mut counter = 0;
+    
+    while counter < 1000000 {
+        println!("Counter: {counter}");
+        counter += 1; // Increment the counter
+    }
+}
