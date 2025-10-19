@@ -524,3 +524,60 @@ fn range_inclusive(){
         println!("Value: {}", value);
     }
 }
+
+fn say_hello(){
+    println!("Hello from say_hello function!");
+}
+
+#[test]
+fn test_say_hello(){
+    say_hello();
+}
+
+fn say_goodbye(first_name : &str, last_name : &str){
+    println!("Goodbye, {} {}!", first_name, last_name);
+}
+
+#[test]
+fn test_say_goodbye(){
+    say_goodbye("Arter", "Tendean");
+    say_goodbye("Shinomiya", "Kaguya");
+}
+
+fn factorial_loop(n: i32) -> i32 {
+    if n < 1 {
+        return 0;
+    }
+    
+    let mut result = 1;
+    
+    for i in 1..=n {
+        result *= i;
+    }
+    
+    return result;
+}
+
+#[test]
+fn test_factorial_loop(){
+    let number = 5;
+    let result = factorial_loop(number);
+    println!("Factorial of {} is {}", number, result);
+}
+
+fn factorial_recursive(n: i32) -> i32 {
+    if n < 1 {
+        return 0;
+    } else if n == 1 {
+        return 1;
+    } else {
+        return n * factorial_recursive(n - 1);
+    }
+}
+
+#[test]
+fn test_factorial_recursive(){
+    let number = 5;
+    let result = factorial_recursive(number);
+    println!("Factorial of {} is {}", number, result);
+}
