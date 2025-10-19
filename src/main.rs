@@ -479,14 +479,48 @@ fn while_loop(){
 #[test]
 fn for_loop(){
     let array :[&str; 5] = ["Arter", "Tendean", "is", "a", "developer"];
-    println!("{}", array.len()); 
+    println!("{}", array.len());
+
+    // Manual iteration
+    // let mut index = 0;
+    // while index < array.len() {
+    //     println!("Index {} = {}", index, array[index]);
+    //
+    //     index += 1;
+    // }
+
+    // Loop through array using for loop
+    for value in array {
+        println!("Value: {value}");
+    }
+}
+
+#[test]
+fn range(){
+    let range = 0.. 10;
+    println!("Start: {}", range.start);
+    println!("End: {}", range.end);
     
-    let mut index = 0;
-    
-    while index < array.len() {
-        println!("Index {} = {}", index, array[index]);
-        
-        index += 1;
+    for value in range {
+        println!("Value: {}",value);
     }
     
+    for value in 0..10 {
+        println!("Value: {}", value);
+    }
+}
+
+#[test]
+fn range_inclusive(){
+    let range = 0..=10;
+    println!("Start: {}", range.start());
+    println!("End: {}", range.end());
+
+    for value in range {
+        println!("Value: {}",value);
+    }
+
+    for value in 0..=10 {
+        println!("Value: {}", value);
+    }
 }
