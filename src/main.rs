@@ -475,3 +475,18 @@ fn while_loop(){
         counter += 1; // Increment the counter
     }
 }
+
+#[test]
+fn for_loop(){
+    let array :[&str; 5] = ["Arter", "Tendean", "is", "a", "developer"];
+    println!("{}", array.len()); 
+    
+    let mut index = 0;
+    
+    while index < array.len() {
+        println!("Index {} = {}", index, array[index]);
+        
+        index += 1;
+    }
+    
+}
