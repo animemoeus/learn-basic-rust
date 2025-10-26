@@ -581,3 +581,39 @@ fn test_factorial_recursive(){
     let result = factorial_recursive(number);
     println!("Factorial of {} is {}", number, result);
 }
+
+fn print_number(number: i32) {
+    println!("number: {}", number);
+}
+
+fn hi(name: String){
+    println!("Hi {}", name);
+}
+
+#[test]
+fn test_hi(){
+    let number = 10;
+    print_number(number);
+    println!("{}", number);
+
+    let name = String::from("Arter Tendean");
+    hi(name);
+    // println!(name);
+}
+
+fn full_name(first_name: String, last_name: String) -> String {
+    return format!("{} {}", first_name, last_name);
+}
+
+#[test]
+fn test_full_name(){
+    let first_name = String::from("Arter");
+    let last_name = String::from("Tendean");
+    let full_name = full_name(first_name, last_name);
+
+    println!("{}", full_name);
+    // println!("{}", first_name);
+    // println!("{}", last_name);
+
+
+}
