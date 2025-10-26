@@ -601,19 +601,21 @@ fn test_hi(){
     // println!(name);
 }
 
-fn full_name(first_name: String, last_name: String) -> String {
-    return format!("{} {}", first_name, last_name);
+fn full_name(first_name: String, last_name: String) -> (String, String, String) {
+    let full_name =  format!("{} {}", first_name, last_name);
+
+    return (first_name, last_name, full_name)
 }
 
 #[test]
 fn test_full_name(){
     let first_name = String::from("Arter");
     let last_name = String::from("Tendean");
-    let full_name = full_name(first_name, last_name);
+    let (first_name_2, last_name_2, full_name_2) = full_name(first_name, last_name);
 
-    println!("{}", full_name);
-    // println!("{}", first_name);
-    // println!("{}", last_name);
+    println!("{}", full_name_2);
+    println!("{}", first_name_2);
+    println!("{}", last_name_2);
 
 
 }
