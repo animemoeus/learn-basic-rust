@@ -616,6 +616,25 @@ fn test_full_name(){
     println!("{}", full_name_2);
     println!("{}", first_name_2);
     println!("{}", last_name_2);
+}
 
+// Reference and borrowing
+fn full_name_2(first_name: &String, last_name: &String) -> String {
+    let full_name = format!("{} {}", first_name, last_name);
 
+    return full_name
+}
+
+#[test]
+fn test_full_name2(){
+    let first_name = String::from("Kaguya");
+    let last_name = String::from("Shinomiya");
+
+    let full_name = full_name_2(&first_name, &last_name);
+
+    println!("{}", first_name);
+    println!("{}", last_name);
+    println!("{}", full_name);
+    println!("{}", first_name);
+    println!("{}", last_name);
 }
