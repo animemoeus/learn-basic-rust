@@ -638,3 +638,16 @@ fn test_full_name2(){
     println!("{}", first_name);
     println!("{}", last_name);
 }
+
+fn change_name(full_name: &mut String, new_name: String){
+    full_name.push_str(&*new_name);
+}
+
+#[test]
+fn test_change_name(){
+    let mut full_name = String::from("Arter Tendean");
+    println!("Full name before: {}", full_name);
+
+    change_name(&mut full_name, String::from("Hehehe"));
+    println!("Full name after: {}", full_name)
+}
