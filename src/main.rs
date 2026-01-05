@@ -651,3 +651,31 @@ fn test_change_name(){
     change_name(&mut full_name, String::from("Hehehe"));
     println!("Full name after: {}", full_name)
 }
+
+// Ownership in function
+fn print_number_2(number: u32){
+    println!("Number: {}", number);
+}
+
+fn say_hi_2(name: String){
+    println!("Hi {}!", name);
+}
+
+#[test]
+fn test_print_number_2(){
+    let number: u32 = 123;
+
+    print_number_2(number);
+    print_number_2(number);
+    println!("Number: {}", number);
+}
+
+#[test]
+fn test_say_hi_2(){
+    let name: String = String::from("Arter Tendean");
+
+    say_hi_2(name);
+    // say_hi_2(name); -> Should error
+}
+
+// END - Ownership in function
