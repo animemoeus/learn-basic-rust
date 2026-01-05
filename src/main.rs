@@ -678,4 +678,21 @@ fn test_say_hi_2(){
     // say_hi_2(name); -> Should error
 }
 
+fn full_name_3(first_name: String, last_name: String) -> (String, String, String) {
+    let full_name: String = format!("{} {}", first_name, last_name);
+
+    (first_name, last_name, full_name)
+}
+
+#[test]
+fn test_full_name_2(){
+    let first_name: String = String::from("Arter");
+    let last_name: String = String::from("Tendean");
+
+    let (first_name, last_name, full_name)   = full_name_3(first_name, last_name);
+    println!("First name: {}", first_name);
+    println!("Last name: {}", last_name);
+    println!("Full name: {}", full_name)
+}
+
 // END - Ownership in function
