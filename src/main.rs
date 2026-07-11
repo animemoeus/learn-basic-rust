@@ -696,3 +696,26 @@ fn test_full_name_2(){
 }
 
 // END - Ownership in function
+
+// Slice
+
+#[test]
+fn slice_reference(){
+    let array: [i32; 10] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let slice1: &[i32] = &array[..];
+    println!("slice1: {:?}", slice1);
+
+    let slice2: &[i32] = &array[0..5];
+    println!("slice2: {:?}", slice2);
+
+    let slice3: &[i32] = &array[5..];
+    println!("slice3: {:?}", slice3);
+}
+
+// END - Slice
+
+
+
+
+
+
