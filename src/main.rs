@@ -714,8 +714,19 @@ fn slice_reference(){
 
 // END - Slice
 
+// String Slice
+ #[test]
+ fn string_slice(){
+     let name: String = String::from("Arter Tendean");
 
+     let first_name: &str = &name[0..5];
+     println!("First name: {}", first_name);
 
+     let last_name: &str = &name[6..];
+     println!("Last name: {}", last_name);
+ }
+
+// END - String Slice
 
 
 
