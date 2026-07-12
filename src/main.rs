@@ -728,5 +728,67 @@ fn slice_reference(){
 
 // END - String Slice
 
+// Struct
+
+struct Person {
+    first_name: String,
+    middle_name: String,
+    last_name: String,
+    age: u8
+}
+
+#[test]
+fn struct_person(){
+
+    // shorthand
+    let first_name: String = String::from("Arter");
+
+    let mut person: Person = Person {
+        first_name,
+        middle_name: String::from(""),
+        last_name: String::from("Tendean"),
+        age: 26
+    };
+
+    print_person(&person);
+    // person.middle_name = String::from("-");
+    // println!("{}", person.middle_name)
+
+    let person2: Person = Person{
+        first_name: person.first_name.clone(),
+        middle_name: person.middle_name.clone(),
+        last_name: person.last_name.clone(),
+        ..person
+    };
+    print_person(&person2);
+    print_person(&person); // Tidak bisa lagi karna ownership sudah dipindahkan
+
+}
+
+fn print_person(person: &Person){
+    println!("Fist name: {}", person.first_name);
+    println!("Middle name: {}", person.middle_name);
+    println!("Last name: {}", person.last_name);
+    println!("Age: {}", person.age);
+}
+
+struct GeoPoint(f64, f64);
+
+#[test]
+fn tuple_struct(){
+    let geo_point: GeoPoint = GeoPoint(11.0, 22.0);
+    println!("lat: {}", geo_point.0);
+    println!("long: {}", geo_point.1);
+}
+
+struct Nothing;
+
+#[test]
+fn test_nothing(){
+    let _nothing1: Nothing = Nothing;
+    let _nothing2: Nothing = Nothing{};
+}
+
+// End - Struct
 
 
