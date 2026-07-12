@@ -1,3 +1,5 @@
+use log::log;
+
 fn main() {
     println!("Hello, world!");
 
@@ -790,5 +792,49 @@ fn test_nothing(){
 }
 
 // End - Struct
+
+// Method
+
+impl Person {
+    fn say_hello(&self, name: &str){
+        println!("Hello {}, my name is {}",name, self.first_name);
+    }
+}
+
+impl Person {
+    fn kamusta(&self, name: &str){
+        println!("Hello {}, my name is {}",name, self.first_name);
+    }
+}
+
+#[test]
+fn test_person_method(){
+    let person: Person = Person {
+        first_name: String::from("Kaguya"),
+        middle_name: String::from(""),
+        last_name: String::from("Shinomiya"),
+        age: 22
+    };
+
+    print_person(&person);
+    person.say_hello("Arter");
+    person.kamusta("Tendean");
+}
+
+impl GeoPoint {
+    fn new(lat: f64, long: f64) -> GeoPoint {
+        return GeoPoint(lat, long);
+    }
+}
+
+#[test]
+fn test_method_new(){
+    let geo_point: GeoPoint = GeoPoint::new(1.1, 2.2);
+    println!("lat: {}", geo_point.0);
+    println!("long: {}", geo_point.1);
+}
+
+// End - Method
+
 
 
