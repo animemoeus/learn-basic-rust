@@ -836,5 +836,57 @@ fn test_method_new(){
 
 // End - Method
 
+// Enum
+
+ enum Level {
+     Regular,
+     Premium,
+     Platinum
+ }
+
+#[test]
+fn test_enum(){
+    let level: Level = Level::Premium;
+
+    // println!("Level: {}", level);
+}
+
+ enum Payment {
+     // card number
+     CreditCard(String),
+     // bank name, account number
+     BankTransfer(String, String),
+     // e-wallet name, e-wallet number
+     EWallet(String, String)
+ }
+
+#[test]
+fn test_payment(){
+    let _payment1: Payment = Payment::CreditCard(String::from("11 22 33 44"));
+    _payment1.pay(100);
+
+    let _payment2: Payment = Payment::BankTransfer(String::from("BRI"), String::from("1234567"));
+    _payment2.pay(200);
+
+    let _payment3: Payment = Payment::EWallet(String::from("Gopay"), String::from("11 22 33 44 55"));
+    _payment3.pay(300);
+}
+
+impl Payment {
+    fn pay(&self, amount: u32){
+        println!("Paying amount: {}", amount);
+    }
+
+}
+
+// End - Enum
+
+
+
+
+
+
+
+
 
 
