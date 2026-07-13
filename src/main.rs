@@ -915,6 +915,64 @@ impl Payment {
      }
  }
 
+#[test]
+fn test_match_value(){
+    let name: &str = "Arter";
+
+    match name {
+        "Arter" | "Tendean" => {
+            println!("Halo arter!");
+        }
+
+        other => {
+            println!("Nama tidak diketahui: {}", other);
+        }
+    }
+}
+
+#[test]
+fn test_range_patterns(){
+    let nilai: u32 = 70;
+
+    match nilai {
+        75..=100 => {
+            println!("Nilai A");
+        }
+
+        50..74 => {
+            println!("Nilai B");
+        }
+
+        25..49 => {
+            println!("Nilai C");
+        }
+
+        other=> {
+            println!("Nilai tidak diketahui: {}", other)
+        }
+    }
+}
+
+#[test]
+fn test_struct_patterns(){
+    let point: GeoPoint = GeoPoint(1.11, 2.2);
+
+    match point {
+        GeoPoint(1.1, long) => {
+            println!("Satu");
+        }
+
+        GeoPoint(lat, 2.2) => {
+            println!("Dua")
+        }
+
+        GeoPoint(lat, long) => {
+            println!("Other: {}, {}", lat, long);
+        }
+    }
+}
+
+
 // End - Pattern Matching
 
 
