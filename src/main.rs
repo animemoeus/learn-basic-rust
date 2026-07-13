@@ -874,12 +874,48 @@ fn test_payment(){
 
 impl Payment {
     fn pay(&self, amount: u32){
-        println!("Paying amount: {}", amount);
-    }
+        // println!("Paying amount: {}", amount);
 
+        match self {
+            Payment::CreditCard(card_number) => {
+                println!("Paying with CreditCard {} with amount {}",card_number, amount);
+            }
+
+            Payment::BankTransfer(bank_name, amount) => {
+                println!("Paying with BankTransfer with bank {} and amount {}", bank_name, amount);
+            }
+
+            Payment::EWallet(wallet , amount    ) => {
+                println!("Paying with E-Wallet {} and amount {} ", wallet, amount);
+            }
+        }
+    }
 }
 
 // End - Enum
+
+// Pattern Matching
+
+ #[test]
+ fn test_enum_pattern_matching(){
+     let level: Level = Level::Regular;
+
+     match level {
+         Level::Regular => {
+             println!("Regular");
+         }
+
+         Level::Premium => {
+             println!("Premium");
+         }
+
+         Level::Platinum => {
+             println!("Platinum");
+         }
+     }
+ }
+
+// End - Pattern Matching
 
 
 
