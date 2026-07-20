@@ -15,6 +15,30 @@ mod model {
     }
 }
 
+mod first{
+    pub fn say_hello(){
+        println!("Hello from first");
+    }
+}
+
+mod second {
+    pub fn say_hello(){
+        println!("Hello from second");
+    }
+}
+
+use first::say_hello;
+use second::say_hello as say_hello_second;
+
+#[test]
+fn test_use(){
+    // first::say_hello();
+    // second::say_hello();
+    say_hello();
+    say_hello_second()
+
+}
+
 // End - Module
 
 fn main() {
@@ -551,9 +575,9 @@ fn range_inclusive(){
     }
 }
 
-fn say_hello(){
-    println!("Hello from say_hello function!");
-}
+// fn say_hello(){
+//     println!("Hello from say_hello function!");
+// }
 
 #[test]
 fn test_say_hello(){
