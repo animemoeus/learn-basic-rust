@@ -1,31 +1,12 @@
 use log::log;
 
 // Module
-mod model {
-    pub struct User {
-        pub first_name: String,
-        pub last_name: String,
-        pub username: String,
-    }
 
-    impl User {
-        pub fn say_hello(&self, name: String){
-            println!("Hello {}, I am {}", name, self.first_name);
-        }
-    }
-}
 
-mod first{
-    pub fn say_hello(){
-        println!("Hello from first");
-    }
-}
 
-mod second {
-    pub fn say_hello(){
-        println!("Hello from second");
-    }
-}
+mod first;
+mod second;
+mod model;
 
 use first::say_hello;
 use second::say_hello as say_hello_second;
