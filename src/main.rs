@@ -977,7 +977,31 @@ fn test_struct_patterns(){
 
 
 
+// Type Alias
 
+type Age = u8;
+type IdentityNumber = String;
+
+struct Customer {
+    id: IdentityNumber,
+    age: Age,
+    name: String
+}
+
+#[test]
+fn test_stuct(){
+    let person: Customer = Customer{
+        id: String::from("11 22 33"),
+        age: 99,
+        name: String::from("Arter TEndean")
+    };
+
+    println!("Customer id: {}", person.id);
+    println!("Customer name: {}",person.name);
+    println!("Customer age: {}", person.age);
+}
+
+// End - Type Alias
 
 
 
