@@ -1,9 +1,33 @@
 use log::log;
 
+// Module
+mod model {
+    pub struct User {
+        pub first_name: String,
+        pub last_name: String,
+        pub username: String,
+    }
+
+    impl User {
+        pub fn say_hello(&self, name: String){
+            println!("Hello {}, I am {}", name, self.first_name);
+        }
+    }
+}
+
+// End - Module
+
 fn main() {
     println!("Hello, world!");
 
-    println!("Hello arter!")
+    println!("Hello arter!");
+
+    let user: model::User = model::User{
+        first_name: String::from("Arter"),
+        last_name: String::from("Tendean"),
+        username: String::from("artertendean")
+    };
+    user.say_hello(String::from("Takagi"));
 }
 
 #[test]
